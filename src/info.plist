@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>in.aviaryan.icalc</string>
+	<key>category</key>
+	<string>Productivity</string>
+	<key>connections</key>
+	<dict>
+		<key>55E46549-1A58-4B65-A2D1-02440226B7B4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>43BFB857-96F6-40B3-A753-BA939C93DBE9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Avi Aryan</string>
+	<key>description</key>
+	<string>High Precision Scientific Calculator using insect</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>iCalc</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>43BFB857-96F6-40B3-A753-BA939C93DBE9</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>icalc</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>#
+# Alfred Script Filter JSON format
+#
+# This example demonstrates all fields available for populating results.
+#
+# For an in-depth explanation, use the (?) help button to the bottom left.
+#
+query=$1
+ans=$(echo "$query" | insect)
+
+cat &lt;&lt; EOB
+{"items": [
+
+	{
+		"uid": "$query",
+		"type": "file",
+		"title": "$ans",
+		"subtitle": "$query",
+		"arg": "~/Desktop",
+		"autocomplete": "$query",
+		"icon": {
+			"type": "fileicon",
+			"path": "~/Desktop"
+		}
+	}
+
+]}
+EOB</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>run.sh</string>
+				<key>subtext</key>
+				<string>expr</string>
+				<key>title</key>
+				<string>icalc</string>
+				<key>type</key>
+				<integer>8</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>55E46549-1A58-4B65-A2D1-02440226B7B4</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>43BFB857-96F6-40B3-A753-BA939C93DBE9</key>
+		<dict>
+			<key>xpos</key>
+			<integer>430</integer>
+			<key>ypos</key>
+			<integer>80</integer>
+		</dict>
+		<key>55E46549-1A58-4B65-A2D1-02440226B7B4</key>
+		<dict>
+			<key>xpos</key>
+			<integer>140</integer>
+			<key>ypos</key>
+			<integer>80</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://aviaryan.in</string>
+</dict>
+</plist>
