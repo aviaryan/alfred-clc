@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>in.aviaryan.icalc</string>
+	<string>in.aviaryan.clc</string>
 	<key>category</key>
 	<string>Productivity</string>
 	<key>connections</key>
@@ -29,7 +29,7 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>iCalc</string>
+	<string>clc</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -59,7 +59,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>icalc</string>
+				<string>clc</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -106,7 +106,7 @@ EOB</string>
 				<key>subtext</key>
 				<string>expr</string>
 				<key>title</key>
-				<string>icalc</string>
+				<string>clc</string>
 				<key>type</key>
 				<integer>8</integer>
 				<key>withspace</key>
