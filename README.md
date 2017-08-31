@@ -39,12 +39,17 @@ sqrt(1.4^2 + 1.5^2) * cos(pi/3)^2
 sum(k^2, k, 1, 10)
 ```
 
+**NOTE:** Since this workflow uses [insect](https://github.com/sharkdp/insect) for the calculations, please see its
+[README](https://github.com/sharkdp/insect) for more possible types of expressions.
+
 
 ## Screenshots
 
 ![Screenshot 1](https://i.imgur.com/MMg3MKN.png)
 
 ![Screenshot 2](https://i.imgur.com/sa1fPJz.png)
+
+![Screenshot 3](https://i.imgur.com/J1B0zI9.png)
 
 
 ## External Requirements
