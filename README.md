@@ -40,16 +40,22 @@ sum(k^2, k, 1, 10)
 ```
 
 
-## Screenshot
+## Screenshots
 
-![Screenshot 1](https://i.imgur.com/z6Mjq9I.png)
+![Screenshot 1](https://i.imgur.com/MMg3MKN.png)
 
 ![Screenshot 2](https://i.imgur.com/sa1fPJz.png)
 
 
 ## External Requirements
 
-* [insect](https://github.com/sharkdp/insect)
+[insect](https://github.com/sharkdp/insect)
+
+```sh
+brew install insect
+# or
+npm install -g insect
+```
 
 
 ----
