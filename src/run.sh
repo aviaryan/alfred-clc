@@ -11,7 +11,8 @@
 # PATH=$($(echo $SHELL) -ic 'echo $PATH'):/usr/local/bin:$PATH
 
 query=$1
-answer=$(echo "$1" | /usr/local/bin/insect)
+PATH=$PATH:/usr/local/bin
+answer=$(echo "$1" | insect)
 # answer=$(which /usr/local/bin/insect)
 
 cat << EOB
