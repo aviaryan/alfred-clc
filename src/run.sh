@@ -7,6 +7,8 @@
 # `autocomplete` needed to keep ScriptFilter result
 # 
 
+# force set PATH (https://github.com/aviaryan/alfred-clc/issues/1)
+PATH=$($(echo $SHELL) -ic 'echo $PATH'):/usr/local/bin:$PATH
 
 query=$1
 answer=$(echo "$1" | insect)
