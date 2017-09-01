@@ -8,10 +8,10 @@
 # 
 
 # force set PATH (https://github.com/aviaryan/alfred-clc/issues/1)
-PATH=$($(echo $SHELL) -ic 'echo $PATH'):/usr/local/bin:$PATH
+# PATH=$($(echo $SHELL) -ic 'echo $PATH'):/usr/local/bin:$PATH
 
 query=$1
-answer=$(echo "$1" | insect)
+answer=$(echo "$1" | /usr/local/bin/insect)
 # answer=$(which /usr/local/bin/insect)
 
 cat << EOB
