@@ -1,23 +1,33 @@
 #!/bin/zsh
 
 # NOTES
-# 
+#
 # bash was not working
 # `arg` goes as output from here
 # `autocomplete` needed to keep ScriptFilter result
-# 
+#
 
-# force set PATH (https://github.com/aviaryan/alfred-clc/issues/1)
-# PATH=$($(echo $SHELL) -ic 'echo $PATH'):/usr/local/bin:$PATH
+query="$1"
 
-query=$1
-PATH=$PATH:/usr/local/bin
-answer=$(echo "$1" | insect)
-# answer=$(which /usr/local/bin/insect)
+if [ -f "/opt/homebrew/bin/insect" ]; then
+	brew_prefix="/opt/homebrew"
+	echo "/opt/homebrew/bin detected as Homebrew binary directory" >&2
+elif [ -f "/usr/local/bin/insect" ]; then
+	brew_prefix="/usr/local"
+	echo "/usr/local/bin detected as Homebrew binary directory" >&2
+elif [ ! -f "/opt/homebrew/bin/brew" ] && [ ! -f "/usr/local/bin/brew" ]; then
+	printf "Unable to find Homebrew in default installation directories. Please ensure it is installed from here: https://brew.sh/.\n" >&2
+	exit 1
+else
+    printf "Unable to find insect in Homebrew installation directory. Please install it by running the following: brew install insect.\n" >&2
+    exit 1
+fi
+
+PATH="$brew_prefix/bin:$PATH"
+answer=$(echo "$query" | insect)
 
 cat << EOB
 {"items": [
-
 	{
 		"uid": "$query",
 		"title": "$answer",
@@ -28,6 +38,5 @@ cat << EOB
 			"path": "icon.png"
 		}
 	}
-
 ]}
 EOB
