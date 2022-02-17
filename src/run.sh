@@ -20,7 +20,7 @@ else
 	exit 1
 fi
 
-PATH=$brew_path:$PATH
+PATH="$brew_path:$PATH"
 answer=$(echo "$query" | insect)
 
 cat << EOB
