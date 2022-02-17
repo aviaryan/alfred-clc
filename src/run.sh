@@ -9,7 +9,7 @@
 
 query="$1"
 PATH=$PATH:/usr/local/bin
-answer=$(echo "$1" | insect)
+answer=$(echo "$query" | insect)
 
 cat << EOB
 {"items": [
