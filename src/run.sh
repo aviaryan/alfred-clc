@@ -15,9 +15,12 @@ if [ -f "/opt/homebrew/bin/insect" ]; then
 elif [ -f "/usr/local/bin/insect" ]; then
 	brew_prefix="/usr/local"
 	echo "/usr/local/bin detected as Homebrew binary directory" >&2
-else
-	printf "Unable to find path to Homebrew. Please ensure that it is installed from https://brew.sh/.\n" >&2
+elif [ ! -f "/opt/homebrew/bin/brew" ] && [ ! -f "/usr/local/bin/brew" ]; then
+	printf "Unable to find Homebrew in default installation directories. Please ensure it is installed from here: https://brew.sh/.\n" >&2
 	exit 1
+else
+    printf "Unable to find insect in Homebrew installation directory. Please install it by running the following: brew install insect.\n" >&2
+    exit 1
 fi
 
 PATH="$brew_prefix/bin:$PATH"
