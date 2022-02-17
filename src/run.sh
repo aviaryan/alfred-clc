@@ -8,7 +8,19 @@
 #
 
 query="$1"
-PATH=$PATH:/usr/local/bin
+
+if [ -f "/opt/homebrew/bin/brew" ]; then
+	brew_path="/opt/homebrew/bin"
+	echo "/opt/homebrew/bin detected as Homebrew binary directory" >&2
+elif [ -f "/usr/local/bin/brew" ]; then
+	brew_path="/usr/local/bin"
+	echo "/usr/local/bin detected as Homebrew binary directory" >&2
+else
+	printf "Unable to find path to Homebrew. Please ensure that it is installed from https://brew.sh/.\n" >&2
+	exit 1
+fi
+
+PATH=$brew_path:$PATH
 answer=$(echo "$query" | insect)
 
 cat << EOB
