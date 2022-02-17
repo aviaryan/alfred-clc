@@ -25,7 +25,6 @@ answer=$(echo "$query" | insect)
 
 cat << EOB
 {"items": [
-
 	{
 		"uid": "$query",
 		"title": "$answer",
@@ -36,6 +35,5 @@ cat << EOB
 			"path": "icon.png"
 		}
 	}
-
 ]}
 EOB
