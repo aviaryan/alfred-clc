@@ -7,7 +7,7 @@
 # `autocomplete` needed to keep ScriptFilter result
 #
 
-query=$1
+query="$1"
 PATH=$PATH:/usr/local/bin
 answer=$(echo "$1" | insect)
 # answer=$(which /usr/local/bin/insect)
