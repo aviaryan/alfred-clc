@@ -11,13 +11,15 @@ This workflow adds a powerful calculator right in your Alfred bar.
 
 ## Installing
 
-Install [insect](https://github.com/sharkdp/insect)
+1. Install [Homebrew](https://brew.sh/).
 
-```sh
+2. Install [insect](https://github.com/sharkdp/insect).
+
+```bash
 brew install insect
 ```
 
-Then download [CLC workflow file](https://github.com/aviaryan/alfred-clc/raw/master/clc.alfredworkflow) and double click to open it with Alfred.
+3. Then download the [CLC workflow file](https://github.com/aviaryan/alfred-clc/raw/master/clc.alfredworkflow), and double-click it to have it open in Alfred.
 
 
 ## Using
