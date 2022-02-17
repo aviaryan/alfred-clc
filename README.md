@@ -58,10 +58,8 @@ sum(k^2, k, 1, 10)
 
 [insect](https://github.com/sharkdp/insect)
 
-```sh
+```bash
 brew install insect
-# or
-npm install -g insect
 ```
 
 
