@@ -9,10 +9,10 @@
 
 query="$1"
 
-if [ -f "/opt/homebrew/bin/brew" ]; then
+if [ -f "/opt/homebrew/bin/insect" ]; then
 	brew_prefix="/opt/homebrew"
 	echo "/opt/homebrew/bin detected as Homebrew binary directory" >&2
-elif [ -f "/usr/local/bin/brew" ]; then
+elif [ -f "/usr/local/bin/insect" ]; then
 	brew_prefix="/usr/local"
 	echo "/usr/local/bin detected as Homebrew binary directory" >&2
 else
